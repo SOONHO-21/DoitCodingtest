@@ -33,13 +33,18 @@ public class P1260 {
         BFS(start_point);
     }
     static void DFS(int node){
+<<<<<<< HEAD
         System.out.println(node);
+=======
+        System.out.println(node + " ");
+>>>>>>> 8f220557d47ec87b4accc78476f30189aa496f72
         visited[node] = true;
         for(int i : A[node]){
             if(!visited[i])
                 DFS(i);
         }
     }
+<<<<<<< HEAD
     static void BFS(int node){
         Queue<Integer> queue = new LinkedList<>();
         queue.add(node);
@@ -52,6 +57,20 @@ public class P1260 {
                 if(!visited[next]){
                     System.out.println(next);
                     queue.offer(next);
+=======
+    static void BFS(int Node){
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.add(Node);
+        visited[Node] = true;
+
+        while (!queue.isEmpty()){
+            int now_node = queue.poll();
+            System.out.println(now_node);
+            for(int i : A[now_node]){
+                if(!visited[i]) {   //아직 방문을 안 했을 경우에만
+                    queue.add(i);
+                    visited[i] = true;
+>>>>>>> 8f220557d47ec87b4accc78476f30189aa496f72
                 }
             }
         }

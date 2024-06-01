@@ -15,7 +15,11 @@ public class P1707 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Scanner sc = new Scanner(System.in);
         int K = sc.nextInt();
+<<<<<<< HEAD
         for(int t=0; t<K; t++){
+=======
+        for(int i=0; i<K; i++){
+>>>>>>> 8f220557d47ec87b4accc78476f30189aa496f72
             String[] s = br.readLine().split(" ");
             int N = Integer.parseInt(s[0]);   //노드 개수
             int E = Integer.parseInt(s[1]);   //에지 개수
@@ -24,7 +28,11 @@ public class P1707 {
             visited = new boolean[N+1];
             IsEven = true;
             for(int j=1; j<N; j++){
+<<<<<<< HEAD
                 A[j] = new ArrayList<Integer>();
+=======
+                A[i] = new ArrayList<Integer>();
+>>>>>>> 8f220557d47ec87b4accc78476f30189aa496f72
             }
             for(int j=0; j<E; j++){     //인접 리스트 노드 연결
                 s = br.readLine().split(" ");

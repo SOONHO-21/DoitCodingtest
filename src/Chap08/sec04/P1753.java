@@ -36,6 +36,7 @@ public class P1753 {
             int w = Integer.parseInt(st.nextToken());
             list[u].add(new Edge(v, w));
         }
+<<<<<<< HEAD
         priorityQueue.add(new Edge(K, 0));  //K를 시작점으로 설정하기
         distance[K] = 0;
         //다 익스트라 알고리즘 구현 부분
@@ -55,6 +56,28 @@ public class P1753 {
         }
         for(int i=0; i<V; i++){
             if(visited[i])
+=======
+        //다 익스트라 알고리즘 구현 부분
+        priorityQueue.add(new Edge(K, 0));  //K를 시작점으로 설정
+        distance[K] = 0;
+        while (!priorityQueue.isEmpty()){
+            Edge now = priorityQueue.poll();
+            int n_v = now.vertex;
+            if(visited[n_v]) continue;
+            visited[n_v] = true;
+            for(int i=0; i<list[n_v].size(); i++){
+                Edge temp = list[n_v].get(i);
+                int next_vertex = temp.vertex;
+                int next_value = temp.value;
+                if(distance[next_vertex] > distance[n_v] + next_value) {
+                    distance[next_vertex] = distance[n_v] + next_value;
+                    priorityQueue.add(new Edge(next_vertex, distance[next_vertex]));
+                }
+            }
+        }
+        for(int i=1; i<=V; i++){
+            if(visited[i])  //visited[i]가 false라는 것은 i 노드에 인바운드 엣지가 없다는 뜻
+>>>>>>> 8f220557d47ec87b4accc78476f30189aa496f72
                 System.out.println(distance[i]);
             else
                 System.out.println("INF");
